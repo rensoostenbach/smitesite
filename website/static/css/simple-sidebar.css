@@ -1,0 +1,235 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+body {
+	overflow-x: hidden;
+	background-color: #dcdcdc;
+}
+#wrapper {
+	padding-left: 0;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+#wrapper.toggled {
+	padding-left: 150px;
+}
+#sidebar-wrapper {
+	z-index: 1000;
+	position: fixed;
+	left: 150px;
+	width: 0;
+	height: 100%;
+	margin-left: -150px;
+	overflow-y: auto;
+	background: #000;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+#wrapper.toggled #sidebar-wrapper {
+	width: 150px;
+}
+#page-content-wrapper {
+	width: 100%;
+	position: absolute;
+	padding: 15px;
+}
+#wrapper.toggled #page-content-wrapper {
+	position: absolute;
+	margin-right: -150px;
+}
+/* Sidebar Styles */
+
+.sidebar-nav {
+	position: absolute;
+	top: 0;
+	width: 150px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sidebar-nav li {
+	text-indent: 20px;
+	line-height: 40px;
+}
+.sidebar-nav li a {
+	display: block;
+	text-decoration: none;
+	color: #999999;
+}
+.sidebar-nav li a:hover {
+	text-decoration: none;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.2);
+}
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+	text-decoration: none;
+}
+.sidebar-nav>.sidebar-brand {
+	height: 65px;
+	font-size: 18px;
+	line-height: 60px;
+}
+.sidebar-nav>.sidebar-brand a {
+	color: #999999;
+}
+.sidebar-nav>.sidebar-brand a:hover {
+	color: #fff;
+	background: none;
+}
+@media(min-width:768px) {
+	#wrapper {
+		padding-left: 0;
+	}
+	#wrapper.toggled {
+		padding-left: 150px;
+	}
+	#sidebar-wrapper {
+		width: 0;
+	}
+	#wrapper.toggled #sidebar-wrapper {
+		width: 150px;
+	}
+	#page-content-wrapper {
+		padding: 20px;
+		position: relative;
+	}
+	#wrapper.toggled #page-content-wrapper {
+		position: relative;
+		margin-right: 0;
+	}
+	/* Include the padding and border in an element's total width and height */
+	* {
+		box-sizing: border-box;
+	}
+
+	/* Remove margins and padding from the list */
+	#list ul {
+		margin: 0;
+		padding: 0;
+	}
+	/* Style the list items */
+	#list ul li {
+		cursor: pointer;
+		position: relative;
+		padding: 12px 8px 12px 40px;
+		list-style-type: none;
+		background: #eee;
+		font-size: 18px;
+		transition: 0.2s;
+		/* make the list items unselectable */
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	/* Set all odd list items to a different color (zebra-stripes) */
+	#list ul li:nth-child(odd) {
+		background: #f9f9f9;
+	}
+	/* Darker background-color on hover */
+	#list ul li:hover {
+		background: #ddd;
+	}
+	/* When clicked on, add a background color and strike out text */
+	/*#list ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+/*
+/* Add a "checked" mark when clicked on */
+	/*#list ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+	.close {
+		position: absolute;
+		right: 20px;
+		top: 0;
+		padding: 12px 16px 12px 16px;
+	}
+	.close:hover {
+		background-color: #f44336;
+		color: white;
+	}
+	/* Style the header */
+	.header {
+		background-color: #dcdcdc;
+		padding: 30px 40px;
+		color: black;
+		text-align: center;
+	}
+	/* Clear floats after the header */
+	.header:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	/* Style the input */
+	input {
+		border: solid 1px;
+		color: black;
+		width: 30%;
+		padding: 10px;
+		font-size: 16px;
+		margin-right: 5px;
+		float: left;
+	}
+	/* Style the "Add" button */
+	.addBtn {
+		padding: 10px;
+		color: black;
+		border: 1px solid #000000;
+		border-radius: 5px;
+		width: 100px;
+		background: #ffffff;
+		float: left;
+		text-align: center;
+		font-size: 16px;
+		cursor: pointer;
+		transition: 0.3s;
+	}
+	.addBtn:hover {
+		background-color: #bbb;
+	}
+
+	.saveBtn {
+		color: black;
+		border: 1px solid #000000;
+		border-radius: 5px;
+		width: 100px;
+		background: #ffffff;
+		text-align: center;
+		font-size: 16px;
+		cursor: pointer;
+		transition: 0.3s;
+	}
+	.saveBtn:hover {
+		background-color: #bbb;
+	}
+
+	hr {
+	    display: block;
+	    height: 1px;
+	    border: 0;
+	    border-top: 1px solid black;
+	    margin: 1em 0;
+	    padding: 0;
+	}

@@ -1,0 +1,79 @@
+/* Style the "Up" and "Down" buttons */
+
+.downButton {
+	background-color: white;
+	color: black;
+	border: 1px solid #000000;
+	border-radius: 2px;
+	position: relative;
+	right: 0px;
+	cursor: pointer;
+	margin-right: 5px;
+	transition: 0.3s;
+}
+.upButton {
+	background-color: white;
+	color: black;
+	border: 1px solid #000000;
+	border-radius: 2px;
+	position: relative;
+	right: 0px;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-right: 5px;
+	transition: 0.3s;
+}
+.upButton:hover {
+	background-color: #bbb;
+}
+.downButton:hover {
+	background-color: #bbb;
+}
+.liEllipsis:first-child .upButton {
+	display: none;
+}
+.liEllipsis:last-child .downButton {
+	display: none;
+}
+#banner{
+	width: 100%;
+	margin:7px auto;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+}
+.mobileHide {
+	display: inline;
+}
+/* Smartphone Portrait and Landscape */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	.mobileHide {
+		display: none;
+	}
+}
+
+label {
+color: black;
+font-weight: bold;
+width: 150px;
+text-align: left;
+float: left;
+}
+
+#id_title {
+	width: 100%;
+}
+
+#id_text {
+	width: 100%;
+}
+
+.errorlist {
+	display: none;
+}
+
+.buildname {
+	color: #4b4b4b;
+}

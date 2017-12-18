@@ -1,0 +1,12 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+<h1 style="text-align:left;float:left;"><a href="{% url 'hunter_build' %}">Go back to all hunter builds</h1></a> <h4 style="text-align:right;float:right;"><a href="{% url 'hunter_new' %}">Add your new hunter build here!</a></h4>
+<hr style="clear:both;"/>
+  <div class="build">
+    <h6>by {{ hunterbuild.author }}</h6>
+    <h1>{{ hunterbuild.title }}</h1>
+    <p>{{ hunterbuild.text|linebreaksbr }}</p>
+    <h6><a href="{% url 'deletehunter' pk=hunterbuild.pk %}">Delete this build</h6>
+  </div>
+{% endblock content %}

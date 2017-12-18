@@ -1,0 +1,11 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+  <h1 style="text-align:left;float:left;">Hunter builds</h1> <h4 style="text-align:right;float:right;"><a href="{% url 'hunter_new' %}">Add your new hunter build here!</a></h4>
+  <hr style="clear:both;"/>
+  {% for hunterbuild in hunterbuilds %}
+      <h3><a class="buildname" href="{% url 'hunterbuild_detail' pk=hunterbuild.pk %}">{{ hunterbuild.title }}</a></h3>
+      <h6>by {{ hunterbuild.author|linebreaksbr }}</h6>
+      <hr/>
+  {% endfor %}
+  {% endblock content %}

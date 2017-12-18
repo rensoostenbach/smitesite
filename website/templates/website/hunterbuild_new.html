@@ -1,0 +1,10 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+  <h1>Add a new hunter build</a></h1>
+  <hr/>
+  <form method="POST" class="post-form">{% csrf_token %}
+      {{ hunterform.as_p }}
+      <button type="submit" class="saveBtn">Add!</button>
+  </form>
+  {% endblock content %}

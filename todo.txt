@@ -1,0 +1,6 @@
+To do:
+Add new build per class
+Add detail page per build
+Make index page
+Make links in sidebar work correctly
+Nice styling on ever page
