@@ -1,0 +1,11 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+  <h1 style="text-align:left;float:left;">Guardian builds</h1> <h4 style="text-align:right;float:right;"><a href="{% url 'guardian_new' %}">Add your new guardian build here!</a></h4>
+  <hr style="clear:both;"/>
+  {% for guardianbuild in guardianbuilds %}
+      <h3><a class="buildname" href="{% url 'guardianbuild_detail' pk=guardianbuild.pk %}">{{ guardianbuild.title }}</a></h3>
+      <h6>by {{ guardianbuild.author|linebreaksbr }}</h6>
+      <hr/>
+  {% endfor %}
+  {% endblock content %}

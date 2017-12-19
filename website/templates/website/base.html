@@ -23,30 +23,44 @@
       <li>
         <a href="{% url 'index' %}">Home</a>
       </li>
+      {% if not user.is_authenticated %}
+      <li>
+        <a href="{% url 'signup' %}">Sign up</a>
+      </li>
+      <li>
+        <a href="{% url 'login_view' %}">Log in</a>
+      </li>
+      {% endif %}
       <li>
         <a href="{% url 'hunter_build' %}">Hunters</a>
       </li>
       <li>
-        <a href="#">Mages</a>
+        <a href="{% url 'mage_build' %}">Mages</a>
       </li>
       <li>
-        <a href="#">Guardians</a>
+        <a href="{% url 'guardian_build' %}">Guardians</a>
       </li>
       <li>
-        <a href="#">Assassins</a>
+        <a href="{% url 'assassin_build' %}">Assassins</a>
       </li>
       <li>
-        <a href="contact.html">Contact</a>
-      </li>
-      <li>
-        <a href="aboutme.html">About me</a>
+        <a href="{% url 'warrior_build' %}">Warriors</a>
       </li>
     </ul>
   </div><!-- /#sidebar-wrapper -->
   <div id="page-content-wrapper">
       <div class="container-fluid">
         <div class="mobileHide">
-          <a href="index.html"><img id="banner" src="{% static 'img/banner-3.jpg' %}"></a>
+          <a href="{% url 'index' %}"><img id="banner" src="{% static 'img/banner-3.jpg' %}"></a>
+        </div>
+        <div class="loginbase">
+          Currently logged in as:
+           {% if user.is_authenticated %}
+           <a style="font-style: italic;">{{ user.get_username }}</a>
+           <a href="{% url 'logout_view' %}" style="float:right;">Log out</a>
+           {% else %}
+           <a style="font-style: italic;">Not logged in</a>
+           {% endif %}
         </div>
           {% block content %}
           {% endblock %}

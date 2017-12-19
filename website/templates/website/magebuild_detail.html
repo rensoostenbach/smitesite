@@ -1,0 +1,12 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+<h1 style="text-align:left;float:left;"><a href="{% url 'mage_build' %}">Go back to all mage builds</h1></a> <h4 style="text-align:right;float:right;"><a href="{% url 'mage_new' %}">Add your new mage build here!</a></h4>
+<hr style="clear:both;"/>
+  <div class="build">
+    <h6>by {{ magebuild.author }}</h6>
+    <h1>{{ magebuild.title }}</h1>
+    <p>{{ magebuild.text|linebreaksbr }}</p>
+    <h6><a href="{% url 'deletemage' pk=magebuild.pk %}">Delete this build</h6>
+  </div>
+{% endblock content %}

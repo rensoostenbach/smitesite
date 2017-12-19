@@ -48,7 +48,7 @@
 }
 /* Smartphone Portrait and Landscape */
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media(max-device-width: 480px) {
 	.mobileHide {
 		display: none;
 	}
@@ -76,4 +76,10 @@ float: left;
 
 .buildname {
 	color: #4b4b4b;
+}
+
+input[type=text] {
+    width: 75%;
+    box-sizing: border-box;
+		margin-bottom: 20px;
 }

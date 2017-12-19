@@ -1,0 +1,15 @@
+{% extends 'website/base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class='col-sm-6 col-sm-offset-3'>
+    <h2>Log in</h2>
+    <form method="post" action="{% url 'login_view' %}">
+      {% csrf_token %}
+      {{ form.as_table }}
+      <button type="submit">Login</button>
+    </form>
+</div>
+<p><a href="{% url 'signup' %}">New to My Site? Sign up</a>
+<p><a>After succesfully logging in, you will be taken to the homepage.</a></p>
+{% endblock content %}

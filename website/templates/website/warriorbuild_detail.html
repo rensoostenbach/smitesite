@@ -1,0 +1,12 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+<h1 style="text-align:left;float:left;"><a href="{% url 'warrior_build' %}">Go back to all warrior builds</h1></a> <h4 style="text-align:right;float:right;"><a href="{% url 'warrior_new' %}">Add your new warrior build here!</a></h4>
+<hr style="clear:both;"/>
+  <div class="build">
+    <h6>by {{ warriorbuild.author }}</h6>
+    <h1>{{ warriorbuild.title }}</h1>
+    <p>{{ warriorbuild.text|linebreaksbr }}</p>
+    <h6><a href="{% url 'deletewarrior' pk=warriorbuild.pk %}">Delete this build</h6>
+  </div>
+{% endblock content %}

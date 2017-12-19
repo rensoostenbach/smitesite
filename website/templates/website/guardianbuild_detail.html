@@ -1,0 +1,12 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+<h1 style="text-align:left;float:left;"><a href="{% url 'guardian_build' %}">Go back to all guardian builds</h1></a> <h4 style="text-align:right;float:right;"><a href="{% url 'guardian_new' %}">Add your new guardian build here!</a></h4>
+<hr style="clear:both;"/>
+  <div class="build">
+    <h6>by {{ guardianbuild.author }}</h6>
+    <h1>{{ guardianbuild.title }}</h1>
+    <p>{{ guardianbuild.text|linebreaksbr }}</p>
+    <h6><a href="{% url 'deleteguardian' pk=guardianbuild.pk %}">Delete this build</h6>
+  </div>
+{% endblock content %}
