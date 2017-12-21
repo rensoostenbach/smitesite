@@ -1,10 +1,13 @@
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^favicon.ico$', RedirectView.as_view(url=staticfiles_storage.url('favicon.ico'), permanent=False), name="favicon"),
     url(r'^contact/', views.contact, name='contact'),
     url(r'^hunterbuild/$', views.hunter_build, name='hunter_build'),
     url(r'^hunterbuild/(?P<pk>\d+)/$', views.hunterbuild_detail, name='hunterbuild_detail'),
