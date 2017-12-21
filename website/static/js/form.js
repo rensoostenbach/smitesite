@@ -1,4 +1,4 @@
-(function() {
+$( document ).ready(function() {
 
     // Create input element for testing
     var input = document.createElement('input');
@@ -24,5 +24,5 @@
     if(!supports.placeholder) {
 
     }
-    
+
   })();
