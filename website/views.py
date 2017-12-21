@@ -19,6 +19,9 @@ from .assassinform import AssassinForm
 def index(request):
     return render(request, 'website/index.html')
 
+def contact(request):
+    return render(request, 'website/contact.html')
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

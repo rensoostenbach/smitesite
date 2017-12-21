@@ -8,68 +8,72 @@
   <meta content="s163757" name="author">
   <title>SMITE God Builds</title>
   <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/simple-sidebar.css' %}">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/small-business.css' %}">
 
 </head>
 <body>
-  <div class="toggled" id="wrapper">
-  <!-- Sidebar -->
-  <div id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-      <li class="sidebar-brand">
-        <a>s163757</a>
-      </li>
-      <li>
-        <a href="{% url 'index' %}">Home</a>
-      </li>
-      {% if not user.is_authenticated %}
-      <li>
-        <a href="{% url 'signup' %}">Sign up</a>
-      </li>
-      <li>
-        <a href="{% url 'login_view' %}">Log in</a>
-      </li>
-      {% endif %}
-      <li>
-        <a href="{% url 'hunter_build' %}">Hunters</a>
-      </li>
-      <li>
-        <a href="{% url 'mage_build' %}">Mages</a>
-      </li>
-      <li>
-        <a href="{% url 'guardian_build' %}">Guardians</a>
-      </li>
-      <li>
-        <a href="{% url 'assassin_build' %}">Assassins</a>
-      </li>
-      <li>
-        <a href="{% url 'warrior_build' %}">Warriors</a>
-      </li>
-    </ul>
-  </div><!-- /#sidebar-wrapper -->
-  <div id="page-content-wrapper">
-      <div class="container-fluid">
-        <div class="mobileHide">
-          <a href="{% url 'index' %}"><img id="banner" src="{% static 'img/banner-3.jpg' %}"></a>
-        </div>
-        <div class="loginbase">
-          Currently logged in as:
-           {% if user.is_authenticated %}
-           <a style="font-style: italic;">{{ user.get_username }}</a>
-           <a href="{% url 'logout_view' %}" style="float:right;">Log out</a>
-           {% else %}
-           <a style="font-style: italic;">Not logged in</a>
-           {% endif %}
-        </div>
-          {% block content %}
-          {% endblock %}
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" style="color: white;">Logged in as: {% if user.is_authenticated %}
+                 <a class="navbar-brand" style="color: white;">{{ user.get_username }}</a>
+                 <a class="navbar-brand" href="{% url 'logout_view' %}" style="margin-left: 10px; color: #868e96;">Log out</a>
+                 {% else %}
+                 <a class="navbar-brand" style="color: white;">Not logged in</a>
+                 {% endif %}
+</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'index' %}">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          {% if not user.is_authenticated %}
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'signup' %}">Sign up</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'login_view' %}">Log in</a>
+          </li>
+          {% endif %}
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>
       </div>
-  </div>
-</div>
-  <script src="vendor/jquery/jquery.min.js">
-	</script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
-	</script>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Heading Row -->
+    <div class="row my-4">
+      <div class="col-lg-8">
+        <img class="img-fluid rounded" src="{% static 'img/wallpaper_smite.jpg' %}" alt="">
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-4">
+        <h1>SMITE God Builds</h1>
+        <p>Welcome to this site! On this website, you can add and delete SMITE builds per god clas, as well as view other builds!</p>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+    {% block content %}
+    {% endblock %}
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <!-- JavaScript form -->
+  <script src="{% static 'js/form.js' %}"></script>
+
 </body>
+
 </html>

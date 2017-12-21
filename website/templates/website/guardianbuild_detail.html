@@ -1,7 +1,7 @@
 {% extends 'website/base.html' %}
 
 {% block content %}
-<h1 style="text-align:left;float:left;"><a href="{% url 'guardian_build' %}">Go back to all guardian builds</h1></a> <h4 style="text-align:right;float:right;"><a href="{% url 'guardian_new' %}">Add your new guardian build here!</a></h4>
+<h4 style="text-align:left;float:left;"><a href="{% url 'guardian_build' %}">Go back to all guardian builds</h4></a> <h4 style="text-align:right;float:right;"><a href="{% url 'guardian_new' %}">Add your new guardian build here!</a></h4>
 <hr style="clear:both;"/>
   <div class="build">
     <h6>by {{ guardianbuild.author }}</h6>

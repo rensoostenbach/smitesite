@@ -1,5 +1,9 @@
 /* Style the "Up" and "Down" buttons */
 
+.navbar-brand p {
+	color: white;
+}
+
 .downButton {
 	background-color: white;
 	color: black;

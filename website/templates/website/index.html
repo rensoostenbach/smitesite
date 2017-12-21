@@ -1,9 +1,64 @@
 {% extends 'website/base.html' %}
 
 {% block content %}
-  <h1>SMITE God Builds</h1>
-  <hr/>
-  <p>Welcome to this site! Click the links in the left to go to the builds per god class.</p>
-  <p>On these pages, you can add and delete builds, as well as view other builds!.</p>
-  <hr/>
+<!-- Call to Action Well -->
+<div class="card text-white bg-secondary my-4 text-center">
+  <div class="card-body">
+    <p class="text-white m-0">View some information on the God classes below, and click on the god class to go to the builds!</p>
+  </div>
+</div>
+
+<!-- Content Row -->
+<div class="row">
+  <div class="col-md-15 col-xs-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h3 class="card-title"><a href="{% url 'hunter_build' %}">Hunters</a></h3>
+        <p class="card-text">Hunters are known to be very powerful in the lategame, and their builds will be centered around that.</p>
+      </div>
+    </div>
+  </div>
+  <!-- /.col-md-4 -->
+  <div class="col-md-15 col-xs-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h3 class="card-title"><a href="{% url 'mage_build' %}">Mages</a></h3>
+        <p class="card-text">Mages need to do a lot of damage throughout the whole game, which is reflected in their builds.</p>
+      </div>
+    </div>
+  </div>
+  <!-- /.col-md-4 -->
+  <div class="col-md-15 col-xs-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h4 class="card-title"><a href="{% url 'guardian_build' %}">Guardians</a></h4>
+        <p class="card-text">Guardians need to have high defense stats, as well as provide support for the teammates.</p>
+      </div>
+    </div>
+  </div>
+  <!-- /.col-md-4 -->
+  <div class="col-md-15 col-xs-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h3 class="card-title"><a href="{% url 'warrior_build' %}">Warriors</a></h3>
+        <p class="card-text">Warriors need to have a lot of defense, so they can initiate a fight, or help their own team.</p>
+      </div>
+    </div>
+  </div>
+  <!-- /.col-md-4 -->
+  <div class="col-md-15 col-xs-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h3 class="card-title"><a href="{% url 'assassin_build' %}">Assassins</a></h3>
+        <p class="card-text">Assassins need to have a lot of power and penetration, so they can quickly take someone out of the fight.</p>
+      </div>
+    </div>
+  </div>
+  <!-- /.col-md-4 -->
+</div>
+<!-- /.row -->
+
+</div>
+<!-- /.container -->
+
   {% endblock content %}
