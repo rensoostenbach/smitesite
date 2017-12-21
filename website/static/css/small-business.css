@@ -18,6 +18,10 @@ body {
   font-size: 75%;
 }
 
+.nav-link:hover {
+  text-decoration: underline;
+}
+
 .buildname {
 	color: #4b4b4b;
 }
